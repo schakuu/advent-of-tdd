@@ -5,20 +5,20 @@ package org.advent.day1;
  */
 public class Elf implements Comparable<Elf> {
 
-    private int totalCalories = 0;
+    private Integer totalCalories = 0;
 
     /**
      * Calories carried by the Elf
      * @return total calories
      */
-    public int getTotalCalories() {
+    public Integer getTotalCalories() {
         return totalCalories;
     }
-
+    public void addCalories(Integer calories) {
+        totalCalories += calories;
+    }
     @Override
     public int compareTo(Elf arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+        return this.getTotalCalories().compareTo(arg0.getTotalCalories());
     }
-
 }
