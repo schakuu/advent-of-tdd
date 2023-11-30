@@ -30,7 +30,7 @@ public class TestElfShould {
         Elf elf2 = new Elf();
         elf2.addCalories(200);
 
-        assertThat(elf1.compareTo(elf2), greaterThan(0));
+        assertThat(elf2.compareTo(elf1), greaterThan(0));
     }
 
     @Test
@@ -50,6 +50,6 @@ public class TestElfShould {
         Elf elf2 = new Elf();
         elf2.addCalories(100);
 
-        assertThat(elf1.compareTo(elf2), lessThan(0));
+        assertThat(elf2.compareTo(elf1), lessThan(0));
     }
 }
