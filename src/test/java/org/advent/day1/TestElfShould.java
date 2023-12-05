@@ -46,6 +46,11 @@ public class TestElfShould {
         assertThat(smallElf.compareTo(bigElf), lessThan(0));
     }
 
+    @Test
+    void check_no_elves_created() {
+        var elves = ElfFactory.createElves(Collections.EMPTY_LIST);
+        assertThat(elves.size(), equalTo(0));
+    }
 
     @Test
     void check_multiple_elves_created() {
@@ -54,5 +59,10 @@ public class TestElfShould {
         var elves = ElfFactory.createElves(input);
 
         assertThat(elves.size(), equalTo(5));
+        assertThat(6000, equalTo(elves.get(0).getTotalCalories()));
+        assertThat(4000, equalTo(elves.get(1).getTotalCalories()));
+        assertThat(11000, equalTo(elves.get(2).getTotalCalories()));
+        assertThat(24000, equalTo(elves.get(3).getTotalCalories()));
+        assertThat(10000, equalTo(elves.get(4).getTotalCalories()));
     }
 }

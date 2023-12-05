@@ -16,11 +16,14 @@ public class ElfFactory {
             Elf elf = null;
             for (var line: elfLines) {
                 if (!line.isBlank()) {
-                    if (elf == null) elf = new Elf();
-
+                    if (elf == null) {
+                        elf = new Elf();
+                        elves.add(elf);
+                    }
                     elf.addCalories(Integer.parseInt(line.trim()));
                 } else {
                     elf = new Elf();
+                    elves.add(elf);
                 }
             }
 
